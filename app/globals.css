@@ -29,7 +29,7 @@ body {
 .cursor {
   height: 50px;
   width: 50px;
-  border: 2px solid whitesmoke;
+  border: 1px solid whitesmoke;
   border-radius: 50%;
   position: absolute;
   transform-origin: 100% 100%;
@@ -39,8 +39,8 @@ body {
   pointer-events: none;
 }
 .cursor__dot {
-  height: 12px;
-  width: 12px;
+  height: 8px;
+  width: 8px;
   background: whitesmoke;
   border-radius: 50%;
   position: absolute;
