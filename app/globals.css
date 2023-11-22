@@ -127,3 +127,61 @@ body {
 .animate__spin__two{
   animation: spin__two 5s linear infinite;
 }
+
+/* ------------------------- Grid -------------------------------------------------- */
+
+.custom__grid {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  padding: 0 2px;
+  display: flex;
+  justify-content: space-between;
+  z-index: 800;
+  pointer-events: none;
+  user-select: none;
+  transition: opacity var(--animation-navigation-backward);
+}
+
+.custom__grid .grid-line {
+  width: 1px;
+  flex-shrink: 0;
+  flex-grow: 0;
+  background: #fff;
+}
+
+[data-navigation-status="active"] .custom__grid {
+  transition: var(--animation-navigation-forward);
+  opacity: 0;
+}
+
+.navigation .custom__grid {
+  opacity: 0;
+  z-index: 0;
+  transition: var(--animation-navigation-backward);
+}
+
+[data-navigation-status="active"] .navigation .grid {
+  transition: var(--animation-navigation-forward);
+  opacity: 1;
+}
+
+@media screen and (max-width: 1120px) {
+  .custom__grid .grid-line:last-child {
+     display: none;
+  }
+}
+
+@media screen and (max-width: 880px) {
+  .custom__grid .grid-line:nth-last-child(2) {
+     display: none;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .custom__grid .grid-line:nth-last-child(3) {
+     display: none;
+  }
+}
