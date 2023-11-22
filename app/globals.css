@@ -10,7 +10,7 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --foreground-rgb: 255, 255, 255;
+    --foreground-rgb: 17, 17, 17;
     --background-start-rgb: 0, 0, 0;
     --background-end-rgb: 0, 0, 0;
   }
@@ -24,4 +24,34 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+}
+
+.cursor {
+  height: 50px;
+  width: 50px;
+  border: 1px solid whitesmoke;
+  border-radius: 50%;
+  position: absolute;
+  transform-origin: 100% 100%;
+  box-sizing: border-box;
+  transition: opacity 0.25s ease;
+  backdrop-filter: grayscale(1);
+  pointer-events: none;
+}
+.cursor__dot {
+  height: 8px;
+  width: 8px;
+  background: whitesmoke;
+  border-radius: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  transition: opacity 0.25s ease;
+}
+
+.cursor__block {
+  opacity: 1;
+}
+
+.cursor__none {
+  opacity: 0;
 }
