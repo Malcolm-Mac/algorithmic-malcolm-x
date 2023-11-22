@@ -14,6 +14,7 @@ module.exports = {
       },
       animation: {
         text: "text 5s ease infinite",
+        'spin-slow': 'spin 3s linear infinite'
       },
       keyframes: {
         text: {
