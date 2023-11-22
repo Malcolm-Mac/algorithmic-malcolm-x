@@ -1,72 +1,58 @@
 "use client";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { gsap } from "gsap";
 
 const Cursor = () => {
-  const cursorRef = useRef(null);
-  const dotRef = useRef(null);
-  const [cursorVisible, setCursorVisible] = useState(false);
+  const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
-    const cursor = cursorRef.current;
-    const dot = dotRef.current;
+    setIsClient(true);
+    const cursor = document.querySelector(".cursor");
+    const cursorDot = document.querySelector(".cursor__dot");
 
-    //gsap.set(cursor, { transformOrigin: "50% 50%" }); // Set transform origin for smooth rotation
-
-    const updateCursor = (event) => {
-      const { clientX: mouseX, clientY: mouseY } = event;
-
-      gsap.to(cursor, {
-        duration: 0.2,
-        x: mouseX,
-        y: mouseY,
-        ease: "power2.out",
+    const updateCursor = (e) => {
+      gsap.to(".cursor", {
+        duration: 1,
+        x: e.pageX * 2 - 50 + "%",
+        y: e.pageY * 2 - 50 + "%",
+        ease: "power3.out",
       });
-      //gsap.to(dot, { duration: 0.2, x: mouseX, y: mouseY, ease: "power2.out" });
+      cursorDot.style.top = e.pageY + "px";
+      cursorDot.style.left = e.pageX + "px";
     };
 
-    
-
-    const handleWindowBlur = () => {
-        setCursorVisible(false);
-      };
-  
-      const handleWindowFocus = () => {
-        if (!cursorVisible) {
-          setCursorVisible(true);
-        }
-      };
-
-    const handleMouseRest = () => {
-      const rect = cursor.getBoundingClientRect();
-      const centerX = rect.left + rect.width / 2;
-      const centerY = rect.top + rect.height / 2;
-
-      gsap.to(dot, {
-        duration: 0.3,
-        x: centerX,
-        y: centerY,
-        ease: "power2.out",
-      });
+    const handleMouseLeave = () => {
+      cursor.classList.remove("cursor__block");
+      cursor.classList.add("cursor__none");
+      cursorDot.classList.remove("cursor__block");
+      cursorDot.classList.add("cursor__none");
     };
 
-    document.addEventListener("mousemove", updateCursor);
-    window.addEventListener("blur", handleWindowBlur);
-    window.addEventListener("focus", handleWindowFocus);
-    window.addEventListener("mouseleave", handleMouseRest);
+    const handleMouseOver = () => {
+      cursor.classList.remove("cursor__none");
+      cursor.classList.add("cursor__block");
+      cursorDot.classList.remove("cursor__none");
+      cursorDot.classList.add("cursor__block");
+    };
+
+    document.addEventListener("mouseleave", handleMouseLeave);
+    document.addEventListener("mouseover", handleMouseOver);
+    window.addEventListener("mousemove", updateCursor);
 
     return () => {
-      document.removeEventListener("mousemove", updateCursor);
-      window.removeEventListener("blur", handleWindowBlur);
-      window.removeEventListener("focus", handleWindowFocus);
-      window.removeEventListener("mouseleave", handleMouseRest);
+      document.removeEventListener("mouseleave", handleMouseLeave);
+      document.removeEventListener("mouseover", handleMouseOver);
+      window.removeEventListener("mousemove", updateCursor);
     };
-  }, [cursorVisible]);
+  }, []);
 
   return (
-    <div ref={cursorRef} className={`custom__cursor ${cursorVisible ? 'visible' : ''}`}>
-      <div ref={dotRef} className="cursor__dot"></div>
-    </div>
+    <>
+      <div>
+        <div class="cursor cursor__none"></div>
+        <div class="cursor__dot cursor__none"></div>
+      </div>
+    </>
   );
 };
 

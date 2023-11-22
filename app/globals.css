@@ -26,26 +26,32 @@ body {
     rgb(var(--background-start-rgb));
 }
 
-.custom__cursor{
-  position: fixed;
-  width: 40px;
-  height: 40px;
-  border: 1px solid #fff;
-  border-radius: 50%;
-  background-color: transparent;
-  pointer-events: none;
-  transform: translate(-50%, -50%);
-  mix-blend-mode: difference;
-  z-index: 999;
-}
-
-.cursor__dot {
-  width: 10px;
-  height: 10px;
-  background-color: #fff;
+.cursor {
+  height: 50px;
+  width: 50px;
+  border: 2px solid whitesmoke;
   border-radius: 50%;
   position: absolute;
-  top: 50%;
-  left: 50%;
+  transform-origin: 100% 100%;
+  box-sizing: border-box;
+  transition: opacity 0.25s ease;
+  backdrop-filter: grayscale(1);
+  pointer-events: none;
+}
+.cursor__dot {
+  height: 12px;
+  width: 12px;
+  background: whitesmoke;
+  border-radius: 50%;
+  position: absolute;
   transform: translate(-50%, -50%);
+  transition: opacity 0.25s ease;
+}
+
+.cursor__block {
+  opacity: 1;
+}
+
+.cursor__none {
+  opacity: 0;
 }
