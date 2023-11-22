@@ -55,3 +55,74 @@ body {
 .cursor__none {
   opacity: 0;
 }
+
+.circular__text__container{
+  position: relative;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.logo{
+  position: absolute;
+  width: 37.5px;
+  height: 37.5px;
+  background-color: yellow;
+  background-size: cover;
+  border-radius: 50%;
+  filter: brightness(1.5) contrast(1.5);
+}
+
+.rotating___text{
+  position: absolute;
+  width: 2%;
+  height: 150%;
+  scale:0.69;
+  animation: rotate__text 10s linear infinite;
+}
+
+.rotating___text p{
+  position: absolute;
+  left:110%;
+  transform-origin: 0 112px;
+}
+
+@keyframes rotate__text {
+  0%
+  {
+    transform: translate3d(0px, 0px, 0px) rotate(0deg);
+  }
+  100%
+  {
+    transform: translate3d(0px, 0px, 0px) rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  to {
+      transform: rotate(360deg);
+  }
+}
+
+@keyframes spin__two {
+  0%
+  {
+    transform: translate3d(0px, 0px, 0px) rotate(360deg);
+  }
+  100%
+  {
+    transform: translate3d(0px, 0px, 0px) rotate(0deg);
+  }
+}
+
+.animate__spin {
+  animation: spin 3s linear infinite;
+}
+
+.animate__spin__two{
+  animation: spin__two 3s linear infinite;
+}
