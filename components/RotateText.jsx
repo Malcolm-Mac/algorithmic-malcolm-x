@@ -4,7 +4,7 @@ import { gsap } from "gsap";
 import { MotionPathPlugin } from "gsap/MotionPathPlugin";
 
 const RotatingText = () => {
-  const text = "- Scroll Down - Scroll Down";
+  const text = "Scroll Down - Scroll Down";
 
   return (
     <div className="circular__text__container">
@@ -19,7 +19,7 @@ const RotatingText = () => {
         {text.split("").map((letter, index) => (
           <p
             key={index}
-            className="text-white uppercase text-sm"
+            className="text-white uppercase text-2xl"
             style={{ transform: `rotate(${index * 14.2}deg)` }}
           >
             {letter}
