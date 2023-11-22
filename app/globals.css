@@ -69,10 +69,11 @@ body {
 
 .logo{
   position: absolute;
-  width: 37.5px;
-  height: 37.5px;
+  width: 20px;
+  height: 20px;
   background-color: yellow;
   background-size: cover;
+  background-repeat: no-repeat;
   border-radius: 50%;
   filter: brightness(1.5) contrast(1.5);
 }
@@ -81,14 +82,14 @@ body {
   position: absolute;
   width: 2%;
   height: 150%;
-  scale:0.69;
+  scale:0.47;
   animation: rotate__text 10s linear infinite;
 }
 
 .rotating___text p{
   position: absolute;
   left:110%;
-  transform-origin: 0 112px;
+  transform-origin: 0 112.5px;
 }
 
 @keyframes rotate__text {
@@ -124,5 +125,5 @@ body {
 }
 
 .animate__spin__two{
-  animation: spin__two 3s linear infinite;
+  animation: spin__two 5s linear infinite;
 }
