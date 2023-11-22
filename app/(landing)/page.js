@@ -2,6 +2,7 @@ import Image from "next/image";
 import Header from "@/components/Header";
 import RotatingText from "@/components/RotateText";
 import Availability from "@/components/Availability";
+import Badges from "@/components/Badges";
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
           Fullstack <br />
           <span className="ml-10 md:ml-14">Developer</span>
         </h1>
+        {/* <Badges /> */}
         <div className="absolute left-0 bottom-[60px] right-0 flex items-end lg:items-start justify-between px-[30px] lg:px-[60px]">
           <RotatingText />
           <Availability />
