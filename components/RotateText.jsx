@@ -20,7 +20,7 @@ const RotatingText = () => {
           <p
             key={index}
             className="text-white uppercase text-2xl"
-            style={{ transform: `rotate(${index * 14.2}deg)` }}
+            style={{ transform: `rotate(${index * 13.5}deg)` }}
           >
             {letter}
           </p>
