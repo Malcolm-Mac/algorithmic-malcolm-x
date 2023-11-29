@@ -1,7 +1,5 @@
 "use client";
-import React, { useEffect } from "react";
-import { gsap } from "gsap";
-import { MotionPathPlugin } from "gsap/MotionPathPlugin";
+import React from "react";
 
 const RotatingText = () => {
   const text = "Scroll Down - Scroll Down";

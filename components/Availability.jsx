@@ -2,7 +2,7 @@ import React from "react";
 
 const Availability = () => {
   return (
-    <div className="flex flex-col mb-2 lg:mb-0">
+    <div className="flex flex-col md:mb-2 lg:mb-0 mb-10">
       <div
         className="flex items-center gap-4 xl:gap-[20px] 2xl:gap-[30px] down"
       >
