@@ -13,7 +13,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`bg-black cursor-none overflow-x-hidden ${inter.className}`}
+        className={`bg-black cursor-none overflow-x-hidden no-scrollbar overflow-y-auto ${inter.className}`}
       >
         <Cursor />
         {children}
