@@ -21,17 +21,17 @@ const Cursor = () => {
     };
 
     const handleMouseLeave = () => {
-      cursor.classList.remove("cursor__block");
-      cursor.classList.add("cursor__none");
-      cursorDot.classList.remove("cursor__block");
-      cursorDot.classList.add("cursor__none");
+      cursor.classNameList.remove("cursor__block");
+      cursor.classNameList.add("cursor__none");
+      cursorDot.classNameList.remove("cursor__block");
+      cursorDot.classNameList.add("cursor__none");
     };
 
     const handleMouseOver = () => {
-      cursor.classList.remove("cursor__none");
-      cursor.classList.add("cursor__block");
-      cursorDot.classList.remove("cursor__none");
-      cursorDot.classList.add("cursor__block");
+      cursor.classNameList.remove("cursor__none");
+      cursor.classNameList.add("cursor__block");
+      cursorDot.classNameList.remove("cursor__none");
+      cursorDot.classNameList.add("cursor__block");
     };
 
     const handleClick = () => {
@@ -67,8 +67,8 @@ const Cursor = () => {
   return (
     <>
       <div>
-        <div class="cursor cursor__none"></div>
-        <div class="cursor__dot cursor__none"></div>
+        <div className="cursor cursor__none"></div>
+        <div className="cursor__dot cursor__none"></div>
       </div>
     </>
   );
