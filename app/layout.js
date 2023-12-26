@@ -1,8 +1,10 @@
 "use client";
+import "./globals.css";
 import Cursor from "@/components/Cursor";
 import localFont from "next/font/local";
-import "./globals.css";
-import { NextUIProvider } from "@nextui-org/system";
+import { ScrollShadow } from "@nextui-org/react";
+import { Providers } from "./providers";
+import React, { useEffect, useState } from "react";
 
 const inter = localFont({ src: "../fonts/Montserrat-VariableFont_wght.ttf" });
 
@@ -12,19 +14,19 @@ const inter = localFont({ src: "../fonts/Montserrat-VariableFont_wght.ttf" });
 }; */
 
 export default function RootLayout({ children }) {
+  
   return (
     <html lang="en">
       <head>
         <title>Malcolm Motubatse</title>
-        <meta name='description' content='Portfolio' />
+        <meta name="description" content="Portfolio" />
       </head>
+
       <body
-        className={`bg-black cursor-none overflow-x-hidden no-scrollbar overflow-y-auto ${inter.className}`}
+        className={`bg-black overflow-x-hidden no-scrollbar overflow-y-auto ${inter.className}`}
       >
-        <NextUIProvider>
-          <Cursor />
-          {children}
-        </NextUIProvider>
+        <Cursor />
+        <Providers>{children}</Providers>
       </body>
     </html>
   );

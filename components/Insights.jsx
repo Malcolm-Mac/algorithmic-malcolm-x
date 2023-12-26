@@ -6,7 +6,9 @@ const Insights = () => {
       <div className="flex justify-center items-center absolute">
         <div className="gradient__circle gradient__circle__1"></div>
         <h1 className="text-white font-semibold text-[50px] leading-[100%] xl:text-[120px] 2xl:text-[150px] xl:leading-[140px] 2xl:leading-[140px] uppercase mb-16">
-          Portfolio 
+         {/*  Selected <br />
+          <span className="ml-10 whitespace-nowrap relative inline-block">Projects</span>  */}
+          Portfolio
         </h1>
       </div>
     </div>

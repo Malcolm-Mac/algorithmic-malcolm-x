@@ -2,6 +2,7 @@ import React, { useLayoutEffect } from "react";
 import { gsap } from "gsap";
 
 const Cursor = () => {
+  
   useLayoutEffect(() => {
     const cursor = document.querySelector(".cursor");
     const cursorDot = document.querySelector(".cursor__dot");
@@ -10,8 +11,8 @@ const Cursor = () => {
       gsap.to(".cursor", {
         duration: 1.5,
         scale: 1,
-        x: e.pageX * 2 - 50 + "%",
-        y: e.pageY * 2 - 50 + "%",
+        x: e.pageX * 4 - 50 + "%",
+        y: e.pageY * 4 - 50 + "%",
         ease: "power3.out",
       });
       cursorDot.style.top = e.pageY + "px";

@@ -68,6 +68,10 @@
   }
 }
 
+html{
+  cursor: none;
+}
+
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
@@ -79,8 +83,8 @@ body {
 }
 
 .cursor {
-  height: 50px;
-  width: 50px;
+  height: 25px;
+  width: 25px;
   border: 1px solid whitesmoke;
   border-radius: 50%;
   position: absolute;
