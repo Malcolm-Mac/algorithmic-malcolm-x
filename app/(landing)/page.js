@@ -4,8 +4,11 @@ import Availability from "@/components/Availability";
 import Badges from "@/components/Badges";
 import Footer from "@/components/Footer";
 import Insights from "@/components/Insights";
+import Projects from "@/components/Projects";
+
 
 export default function Home() {
+  
   return (
     <main>
       <section className="flex items-center h-screen relative px-[30px] lg:px-[60px]">
@@ -29,7 +32,9 @@ export default function Home() {
         <Insights />
       </section>
 
-      <section className="flex items-center h-screen relative px-[30px] lg:px-[60px]"></section>
+      <section className="h-screen relative px-[30px] lg:px-[60px]">
+        <Projects />
+      </section>
 
       <section>
         <Footer />
