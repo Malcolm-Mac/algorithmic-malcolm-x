@@ -46,16 +46,17 @@ export default function CustomCard({
         />
         <p>{project_description}</p>
       </CardBody>
-      <Divider />
+      {/* <Divider />
       <CardFooter>
         <Link
+        className="cursor-scale small"
           isExternal
           showAnchorIcon
           href="https://github.com/nextui-org/nextui"
         >
           Visit source code on GitHub.
         </Link>
-      </CardFooter>
+      </CardFooter> */}
     </Card>
   );
 }

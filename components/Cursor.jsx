@@ -4,69 +4,68 @@ import { gsap } from "gsap";
 const Cursor = () => {
   
   useLayoutEffect(() => {
-    const cursor = document.querySelector(".cursor");
-    const cursorDot = document.querySelector(".cursor__dot");
+    let cursor = document.querySelector('.cursor');
+    let cursorScale = document.querySelectorAll('.cursor-scale');
+    let mouseX = 0;
+    let mouseY = 0;
+    let isMoving = false;
 
-    const updateCursor = (e) => {
-      gsap.to(".cursor", {
-        duration: 1.5,
-        scale: 1,
-        x: e.pageX * 4 - 50 + "%",
-        y: e.pageY * 4 - 50 + "%",
-        ease: "power3.out",
+    gsap.to({}, 0.016, {
+      repeat: -1,
+      onRepeat: function () {
+        if (isMoving) {
+          gsap.set(cursor, {
+            css: {
+              left: mouseX,
+              top: mouseY,
+            },
+          });
+        }
+      },
+    });
+
+    const handleMouseMove = (e) => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+      isMoving = true;
+
+      clearTimeout(recenterTimer);
+      recenterTimer = setTimeout(() => {
+        isMoving = false;
+      }, 500);
+    };
+
+    let recenterTimer;
+
+    window.addEventListener('mousemove', handleMouseMove);
+
+    cursorScale.forEach((link) => {
+      link.addEventListener('mouseenter', () => {
+        cursor.classList.add('grow');
+        if (link.classList.contains('small')) {
+          cursor.classList.remove('grow');
+          cursor.classList.add('grow-small');
+        }
       });
-      cursorDot.style.top = e.pageY + "px";
-      cursorDot.style.left = e.pageX + "px";
-    };
 
-    const handleMouseLeave = () => {
-      cursor.classList.remove("cursor__block");
-      cursor.classList.add("cursor__none");
-      cursorDot.classList.remove("cursor__block");
-      cursorDot.classList.add("cursor__none");
-    };
-
-    const handleMouseOver = () => {
-      cursor.classList.remove("cursor__none");
-      cursor.classList.add("cursor__block");
-      cursorDot.classList.remove("cursor__none");
-      cursorDot.classList.add("cursor__block");
-    };
-
-    const handleClick = () => {
-      gsap.to(".cursor", {
-        scale: 1.5,
-        ease: "power3.out",
+      link.addEventListener('mouseleave', () => {
+        cursor.classList.remove('grow');
+        cursor.classList.remove('grow-small');
       });
-    };
-
-    const handleMouseUp = () => {
-      gsap.to(".cursor", {
-        duration: 1.5,
-        scale: 1,
-        ease: "power3.out",
-      });
-    };
-
-    document.addEventListener("mouseleave", handleMouseLeave);
-    document.addEventListener("mouseover", handleMouseOver);
-    window.addEventListener("mousemove", updateCursor);
-    document.addEventListener("click", handleClick);
-    window.addEventListener("mouseup", handleMouseUp);
+    });
 
     return () => {
-      document.removeEventListener("mouseleave", handleMouseLeave);
-      document.removeEventListener("mouseover", handleMouseOver);
-      window.removeEventListener("mousemove", updateCursor);
-      document.removeEventListener("click", handleClick);
-      window.removeEventListener("mouseup", handleMouseUp);
+      window.removeEventListener('mousemove', handleMouseMove);
+      cursorScale.forEach((link) => {
+        link.removeEventListener('mouseenter', () => {});
+        link.removeEventListener('mouseleave', () => {});
+      });
     };
   }, []);
 
   return (
     <React.Fragment>
-      <div className="cursor cursor__none"></div>
-      <div className="cursor__dot cursor__none"></div>
+      <div className="cursor"></div>
     </React.Fragment>
   );
 };
