@@ -20,7 +20,7 @@ const Projects = () => {
   return (
     <React.Fragment>
       <div className="flex justify-center items-center mb-1">
-        <h3 className="uppercase xl:text-[26px] 2xl:text-[32px] font-[400] text-white">
+        <h3 className="uppercase xl:text-[26px] 2xl:text-[32px] font-[400] text-white cursor-scale small">
           Selected Projects
         </h3>
       </div>

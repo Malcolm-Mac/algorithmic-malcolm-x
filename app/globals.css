@@ -82,18 +82,46 @@ body {
     rgb(var(--background-start-rgb));
 }
 
-.cursor {
-  height: 25px;
-  width: 25px;
-  border: 1px solid whitesmoke;
+.cursor{
+  position: fixed;
+  width: 40px;
+  height: 40px;
+  margin-left: -20px;
+  margin-top: -20px;
   border-radius: 50%;
-  position: absolute;
-  transform-origin: 100% 100%;
-  box-sizing: border-box;
-  transition: opacity 0.25s ease;
-  backdrop-filter: grayscale(1);
+  border: 2px solid #fff;
+  transition: transform 0.3s ease;
+  transform-origin: center center;
   pointer-events: none;
+  mix-blend-mode: difference; 
+  z-index: 1000;
 }
+
+.cursor_dot{
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  margin-left: -20px;
+  margin-top: -20px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  transition: transform 0.3s ease;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 1000;
+}
+
+.grow, .grow-small{
+  transform: scale(4);
+  background: white;
+  mix-blend-mode: difference; 
+  border: none;
+}
+
+.grow-small{
+  transform: scale(2);
+}
+
 .cursor__dot {
   height: 8px;
   width: 8px;

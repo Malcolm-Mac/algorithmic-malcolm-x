@@ -1,10 +1,10 @@
 "use client";
-import React,{useState} from "react";
+import React, { useState } from "react";
 import CustomModal from "./ui/CustomModal";
 
 const Badges = () => {
   const [isOpen, setIsOpen] = useState(false);
-  
+
   const handleIsOpen = () => {
     setIsOpen(true);
   };
@@ -16,13 +16,11 @@ const Badges = () => {
     <>
       <div
         id="awwwards"
-        className="hidden md:block absolute z-50 -translate-y-1/2 top-1/2 right-0"
+        className="hidden md:block absolute z-50 -translate-y-1/2 top-1/2 right-0 cursor-scale small"
         onClick={() => handleIsOpen()}
       >
-        <div className="absolute -inset-0.5 bg-gradient-to-r from-yellow-400 to-purple-600 rounded-md blur animate-pulse"></div>
-        <a
-          className="relative px-0 py-20 shadow-2xl rounded-md bg-white flex flex-col items-center justify-center"
-        >
+        {/* <div className="absolute -inset-0.5 bg-gradient-to-r from-yellow-400 to-purple-600 rounded-md blur animate-pulse"></div> */}
+        <a className="relative px-0 py-20 shadow-2xl bg-white flex flex-col items-center justify-center">
           <div className="flex flex-col items-center justify-center absolute top-2 h-[28px] w-[28px]">
             <img src="/award.png" alt="awards" className="object-contain" />
           </div>
@@ -31,7 +29,7 @@ const Badges = () => {
           </div>
         </a>
       </div>
-      <CustomModal isOpen={isOpen} onClose={handleOnClose} />
+      {isOpen && <CustomModal isOpen={isOpen} onClose={handleOnClose} />}
     </>
   );
 };
