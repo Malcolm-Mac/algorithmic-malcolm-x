@@ -18,7 +18,7 @@ export default function CustomCard({
   image_url,
 }) {
   return (
-    <Card className="flex max-w-[400px] backdrop bg-opacity-10 mb-4 rounded-xl p-3 text-white border bg-transparent shadow-lg">
+    <Card className="flex max-w-[400px] backdrop bg-opacity-10 mb-4 rounded-xl md:p-3 text-white border bg-transparent shadow-lg">
       <CardHeader className="flex gap-3">
         <div className="p-1 bg-white rounded-md">
           <Image
