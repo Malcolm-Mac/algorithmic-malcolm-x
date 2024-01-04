@@ -32,7 +32,7 @@ export default function Home() {
         <Insights />
       </section>
 
-      <section className="h-screen relative px-[30px] lg:px-[60px]">
+      <section className="lg:h-screen relative px-[30px] lg:px-[60px]">
         <Projects />
       </section>
 

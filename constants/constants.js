@@ -84,3 +84,26 @@ export const ProjectData = [
     ],
   },
 ];
+
+export const ProjectDetailsData = [
+  {
+    id: "1",
+    title: "Unilever Data Transfer",
+    projectPicture: "example.co.za",
+    projectDescription:
+      "The goal of the project is to automate the process of sending USSD (Unstructured Supplementary Service Data) data to a form provided by Unilever using the above tech stack. \
+      The objective is to seamlessly transmit information to Unilever through their provided \
+      form after the conclusion of each Unilever USSD session.",
+    techStack: [
+      {
+        name: "MySQL",
+      },
+      {
+        name: "Python",
+      },
+      {
+        name: "Selenium",
+      },
+    ],
+  },
+];

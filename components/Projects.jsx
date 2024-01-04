@@ -24,7 +24,7 @@ const Projects = () => {
           Selected Projects
         </h3>
       </div>
-      <div className="flex items-center justify-around p-10 gap-2">
+      <div className="flex-1 md:flex items-center justify-around p-10 gap-2">
         {currentProjects.map((project, i) => (
           <CustomCard
             key={project.title + i}
