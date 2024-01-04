@@ -37,6 +37,7 @@ export default function RootLayout({ children }) {
       <head>
         <title>Malcolm Motubatse</title>
         <meta name="description" content="Portfolio" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </head>
 
       <body
