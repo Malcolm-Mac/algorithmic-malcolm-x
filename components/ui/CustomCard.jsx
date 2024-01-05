@@ -18,8 +18,8 @@ export default function CustomCard({
   image_url,
 }) {
   return (
-    <Card className="flex max-w-[400px] backdrop bg-opacity-10 mb-4 rounded-xl md:p-3 text-white border bg-transparent shadow-lg">
-      <CardHeader className="flex gap-3">
+    <Card className="flex flex-col max-w-[400px] h-full backdrop bg-opacity-10 mb-4 rounded-xl md:p-3 text-white border bg-transparent shadow-lg">
+      <CardHeader className="flex flex-1 gap-3">
         <div className="p-1 bg-white rounded-md">
           <Image
             alt="nextui logo"
@@ -36,7 +36,7 @@ export default function CustomCard({
         </div>
       </CardHeader>
       <Divider />
-      <CardBody>
+      <CardBody className="flex-1">
         <Image
           alt="Woman listing to music"
           className="object-cover mb-4"
