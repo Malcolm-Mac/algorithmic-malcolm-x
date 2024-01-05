@@ -34,7 +34,9 @@ const Badges = () => {
         className="block absolute z-50 -translate-y-1/2 top-1/2 right-0 cursor-scale small"
         onClick={() => handleIsOpen()}
       >
-        {/* <div className="absolute -inset-0.5 bg-gradient-to-r from-yellow-400 to-purple-600 rounded-md blur animate-pulse"></div> */}
+        {isMobile && (
+          <div className="absolute -inset-0.5 bg-gradient-to-r from-yellow-400 to-purple-600 rounded-md blur animate-pulse"></div>
+        )}
         <a className="relative px-0 py-20 shadow-2xl bg-white flex flex-col items-center justify-center">
           <div className="flex flex-col items-center justify-center absolute top-2 h-[28px] w-[28px]">
             <img src="/award.png" alt="awards" className="object-contain" />
